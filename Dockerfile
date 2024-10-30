@@ -22,8 +22,7 @@ RUN mkdir -p /var/lib/unbound
 RUN wget https://www.internic.net/domain/named.root -qO- >> /var/lib/unbound/root.hints
 
 COPY files/ /opt/
-RUN mkdir -p /etc/periodic/monthly
-COPY monthly/ /etc/periodic/montly/
+COPY monthly/ /etc/periodic/monthly/
 
 #RUN wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_${TARGETARCH}${TARGETVARIANT}.tar.gz >/dev/null 2>&1 \
 RUN wget https://github.com/AdguardTeam/AdGuardHome/releases/download/${AGH_VER}/AdGuardHome_linux_${TARGETARCH}${TARGETVARIANT}.tar.gz >/dev/null 2>&1 \

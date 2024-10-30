@@ -45,4 +45,4 @@ HEALTHCHECK --interval=30s --timeout=15s --start-period=5s\
 
 CMD ["/opt/entrypoint.sh"]
 
-LABEL maintainer="hata.ph <hata.ph@gmail.com>"
+LABEL maintainer="hata.ph <hata.ph@gmail.com> "

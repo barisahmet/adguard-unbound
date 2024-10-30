@@ -23,6 +23,7 @@ RUN wget https://www.internic.net/domain/named.root -qO- >> /var/lib/unbound/roo
 
 COPY files/ /opt/
 COPY monthly/ /etc/periodic/monthly/
+RUN chmod +x /etc/periodic/monthly/update_root_hints.sh
 
 #RUN wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_${TARGETARCH}${TARGETVARIANT}.tar.gz >/dev/null 2>&1 \
 RUN wget https://github.com/AdguardTeam/AdGuardHome/releases/download/${AGH_VER}/AdGuardHome_linux_${TARGETARCH}${TARGETVARIANT}.tar.gz >/dev/null 2>&1 \

@@ -15,7 +15,6 @@ then
 
         echo Files are different
         mv root.hints.new /var/lib/unbound/root.hints
-        systemctl restart unbound
 else
 echo Files are the same - Exiting
 fi

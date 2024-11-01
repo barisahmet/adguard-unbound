@@ -13,7 +13,7 @@ RUN printf '..%s..' "I'm building for TARGETPLATFORM=${TARGETPLATFORM} using BUI
     && printf '..%s..' "With uname -s : " && uname -s \
     && printf '..%s..' "and  uname -m : " && uname -m
  
-RUN apk add --no-cache unbound libcap
+RUN apk add --no-cache unbound libcap redis
 
 WORKDIR /tmp
 
@@ -23,6 +23,7 @@ RUN wget https://www.internic.net/domain/named.root -qO- >> /var/lib/unbound/roo
 
 COPY files/ /opt/
 COPY monthly/ /etc/periodic/monthly/
+COPY redis/ /etc/redis/
 RUN chmod +x /etc/periodic/monthly/update_root_hints.sh
 
 #RUN wget https://static.adguard.com/adguardhome/release/AdGuardHome_linux_${TARGETARCH}${TARGETVARIANT}.tar.gz >/dev/null 2>&1 \
